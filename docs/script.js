@@ -4,6 +4,7 @@ const product = {
         price: 10000,
         amount: 0,
         calory: 1,
+        type: 'm²',
         get sum() {
             return this.amount * this.price
         },
@@ -16,6 +17,7 @@ const product = {
         price: 20500,
         amount: 0,
         calory: 1,
+        type: 'm',
         get sum() {
             return this.amount * this.price
         },
@@ -28,6 +30,7 @@ const product = {
         price: 31900,
         amount: 0,
         calory: 1,
+        type: 'm³',
         get sum() {
             return this.amount * this.price
         },
@@ -79,9 +82,9 @@ delivery.addEventListener('click', () => {
     for (key in product) {
         for (keyId in product[key]) {
             if (product[key].amount > 0 && keyId == 'amount') {
-                menu += `${product[key].amount}x ${product[key].name} \n`
+                menu += `${product[key].amount} ${product[key].type} ${product[key].name} \n`
                 totalPrice += product[key].sum
-                kcall += product[key].kcall
+                // kcall += product[key].kcall
             }
         }
     }
@@ -93,7 +96,8 @@ delivery.addEventListener('click', () => {
 
     document.body.style.overflow = 'hidden'
 
-    receiptWindowOut.innerHTML = `${menu}\n\nCalory: ${kcall}\n\n Total price: ${totalPrice}`
+    receiptWindowOut.innerHTML = `${menu}\n\n Total price: ${totalPrice}`
+    // \n\nCalory: ${kcall}  ------>put it after menu
 })
 
 receiptWindowBtn.addEventListener('click', () => location.reload())
