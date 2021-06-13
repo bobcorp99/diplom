@@ -120,6 +120,25 @@ function recursion(num = 1, speed = 60) {
     }
 }
 
+
+// rasm ko'rish uchun
+const view = document.querySelector('.view')
+const images = document.querySelectorAll('.main__product-info')
+const viewClose = document.querySelector('.view__close')
+const img = document.querySelector('.view img')
+
+images.forEach((el, index) => {
+    el.addEventListener('dblclick', function() {
+        view.classList.add('active')
+        img.setAttribute('src', `images/product${index + 1}.jpg`)
+    })
+})
+
+viewClose.addEventListener('click', () => {
+    view.classList.remove('active')
+})
+
+
 //loader !---------------------------------------------------------------->
 let loader = document.querySelector('.loader_bg');
 
