@@ -138,6 +138,8 @@ viewClose.addEventListener('click', () => {
     view.classList.remove('active')
 })
 
+const edit = document.querySelectorAll('.main__product-edit')
+
 
 //loader !---------------------------------------------------------------->
 let loader = document.querySelector('.loader_bg');

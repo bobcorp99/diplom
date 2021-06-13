@@ -410,6 +410,9 @@ i {
         width: 50%;
         margin-bottom: 20px;
     }
+    .receipt.active .receipt__window{
+        width: 50%;
+    }
 }
 @media (max-width: 710px) {
     .main__product {
@@ -419,6 +422,9 @@ i {
     }
     .main {
         width: 80%;
+    }
+    .receipt.active .receipt__window{
+        width: 75%;
     }
 }
 @media (max-width: 500px) {
